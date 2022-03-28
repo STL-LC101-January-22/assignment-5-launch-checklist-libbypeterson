@@ -17,24 +17,49 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
+    if (NaN(testInput)) {
+        return "Not a Number";
+    } else if (!NaN(testInput)) {
+        return "Is a Number";
+    } else if (testInput = "") {
+        return "Empty";
+    }
+    };
    
-}
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+  if (validateInput(pilot) != 'Not a Number') {
+      window.alert('Please enter valid pilot name.')
+  };
+  if (validateInput(copilot) != 'Not a Number') {
+    window.alert('Please enter valid copilot name.')
+};
+if (validateInput(fuelLevel) != 'Is a Number') {
+    window.alert('Please enter valid fuel level.')
+};
+if (validateInput(cargoLevel) != 'Is a Number') {
+    window.alert('Please enter valid cargo level.')
+};
+
+
+
 }
 
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-     response.json().then(function(json) {
-         
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
+    planetsReturned.then( function(response) {
+     const jsonPromise = response.json();
+     jsonPromise.then(function(json) {
+         console.log(json)
+     })
      });
 
     return planetsReturned
-});
-}
+};
+
 
 
 function pickPlanet(planets) {
