@@ -29,6 +29,9 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    let submit = document.getElementById('form submit');
+    submit.addEventListener('submit', formSubmission)
+
   if (validateInput(pilot) != 'Not a Number') {
       window.alert('Please enter valid pilot name.')
   };
@@ -41,7 +44,23 @@ if (validateInput(fuelLevel) != 'Is a Number') {
 if (validateInput(cargoLevel) != 'Is a Number') {
     window.alert('Please enter valid cargo level.')
 };
+let faultyItems = document.getElementById(list);
 
+let pilotStatus = document.getElementById('pilotStatus');
+pilotStatus = `Pilot ${pilot} is ready for launch`;
+
+let copilotStatus = document.getElementById('copilotStatus');
+copilotStatus = `Co-pilot ${copilot} is ready for launch`;
+
+let launchStatus = document.getElementById('launchStatus');
+let fuelStatus = document.getElementById('fuelStatus');
+
+if (fuelLevel < 10000) {
+    faultyItems.style.visibility = visible;
+    fuelStatus = "Fuel level too low for launch";
+    launchStatus = "Shuttle not ready for launch";
+    launchStatus.style.color = rgb(199, 37, 78);
+};
 
 
 }
