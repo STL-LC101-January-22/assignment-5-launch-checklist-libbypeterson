@@ -29,21 +29,21 @@ function validateInput(testInput) {
 
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let submit = document.getElementById('form submit');
-    submit.addEventListener('submit', formSubmission)
 
   if (validateInput(pilot) != 'Not a Number') {
-      window.alert('Please enter valid pilot name.')
+      return window.alert('Please enter valid pilot name.')
   };
+
   if (validateInput(copilot) != 'Not a Number') {
-    window.alert('Please enter valid copilot name.')
+   return window.alert('Please enter valid copilot name.')
 };
 if (validateInput(fuelLevel) != 'Is a Number') {
-    window.alert('Please enter valid fuel level.')
+    return window.alert('Please enter valid fuel level.')
 };
 if (validateInput(cargoLevel) != 'Is a Number') {
-    window.alert('Please enter valid cargo level.')
+   return window.alert('Please enter valid cargo level.')
 };
+
 let faultyItems = document.getElementById(list);
 
 let pilotStatus = document.getElementById('pilotStatus');
@@ -54,12 +54,24 @@ copilotStatus = `Co-pilot ${copilot} is ready for launch`;
 
 let launchStatus = document.getElementById('launchStatus');
 let fuelStatus = document.getElementById('fuelStatus');
+let cargoStatus = document.getElementById('cargoStatus');
 
 if (fuelLevel < 10000) {
-    faultyItems.style.visibility = visible;
+    faultyItems.style.visibility = "visible";
     fuelStatus = "Fuel level too low for launch";
     launchStatus = "Shuttle not ready for launch";
-    launchStatus.style.color = rgb(199, 37, 78);
+    launchStatus.style.color = "rgb(199, 37, 78)";
+} else 
+if (cargoLevel > 10000) {
+    faultyItems.style.visibilty = "visible";
+    cargoStatus = "Cargo mass too heavy for launch";
+    launchStatus = "Shuttle not ready for launch";
+    launchStatus.style.color = "rgb(199, 37, 78)";
+} else 
+if (fuelLevel >= 10000 && cargoLevel <= 10000) {
+    faultyItems.style.visibilty = "visible";
+    launchStatus = "Shuttle is ready for launch";
+    launchStatus.style.color = "rgb(65, 159, 106)";
 };
 
 

@@ -1,5 +1,8 @@
 // Write your JavaScript code here!
 
+let submit = document.getElementById('formSubmit');
+submit.addEventListener('submit', formSubmission());
+
 const { myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
