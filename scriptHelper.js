@@ -17,9 +17,9 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-    if (NaN(testInput)) {
+    if ( isNaN(testInput)) {
         return "Not a Number";
-    } else if (!NaN(testInput)) {
+    } else if (!isNaN(testInput)) {
         return "Is a Number";
     } else if (testInput = "") {
         return "Empty";
@@ -80,13 +80,14 @@ async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+        if (response.status >= 400) {
+            throw new Error("bad response")
+        }
+        console.log(response)
      return response.json();
-     console.log(response);
-     console.log(json);
-     
+    
      });
-     console.log(response);
-     console.log(json);
+   
      
     return planetsReturned
 };
