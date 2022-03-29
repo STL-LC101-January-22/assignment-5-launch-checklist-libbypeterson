@@ -44,7 +44,7 @@ if (validateInput(cargoLevel) != 'Is a Number') {
    return window.alert('Please enter valid cargo level.')
 };
 
-let faultyItems = document.getElementById(list);
+let list = document.getElementById('faultyItems');
 
 let pilotStatus = document.getElementById('pilotStatus');
 pilotStatus = `Pilot ${pilot} is ready for launch`;
@@ -58,19 +58,19 @@ let cargoStatus = document.getElementById('cargoStatus');
 
 if (fuelLevel < 10000) {
     faultyItems.style.visibility = "visible";
-    fuelStatus = "Fuel level too low for launch";
-    launchStatus = "Shuttle not ready for launch";
+    fuelStatus.innerHTML = "Fuel level too low for launch";
+    launchStatus.innerHTML = "Shuttle not ready for launch";
     launchStatus.style.color = "rgb(199, 37, 78)";
 } else 
 if (cargoLevel > 10000) {
     faultyItems.style.visibilty = "visible";
-    cargoStatus = "Cargo mass too heavy for launch";
-    launchStatus = "Shuttle not ready for launch";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
+    launchStatus.innerHTML= "Shuttle not ready for launch";
     launchStatus.style.color = "rgb(199, 37, 78)";
 } else 
 if (fuelLevel >= 10000 && cargoLevel <= 10000) {
     faultyItems.style.visibilty = "visible";
-    launchStatus = "Shuttle is ready for launch";
+    launchStatus.innerHTML= "Shuttle is ready for launch";
     launchStatus.style.color = "rgb(65, 159, 106)";
 };
 
@@ -80,14 +80,15 @@ if (fuelLevel >= 10000 && cargoLevel <= 10000) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json");
-    planetsReturned.then( function(response) {
-     const jsonPromise = response.json();
-     jsonPromise.then(function(json) {
-         console.log(json)
-     })
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+     return response.json();
+     console.log(response);
+     console.log(json);
+     
      });
-
+     console.log(response);
+     console.log(json);
+     
     return planetsReturned
 };
 
