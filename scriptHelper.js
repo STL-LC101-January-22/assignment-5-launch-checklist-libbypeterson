@@ -44,7 +44,6 @@ if (validateInput(cargoLevel) != 'Is a Number') {
    return window.alert('Please enter valid cargo level.')
 };
 
-let list = document.getElementById('faultyItems');
 
 let pilotStatus = document.getElementById('pilotStatus');
 pilotStatus = `Pilot ${pilot} is ready for launch`;
