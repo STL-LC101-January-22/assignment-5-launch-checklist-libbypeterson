@@ -10,12 +10,12 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 };
 
 function validateInput(testInput) {
-    if ( isNaN(testInput)) {
-        return "Not a Number";
-    } else if (!isNaN(testInput)) {
-        return "Is a Number";
-    } else if (testInput = "") {
+    if (testInput === "") {
         return "Empty";
+    } else if (isNaN(testInput)) {
+        return "Not a Number";
+    } else if (!isNan(testInput)) {
+        return "Is a Number";
     }
     };
    
@@ -23,7 +23,7 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-  if (validateInput(pilot) != 'Not a Number') {
+  /*if (validateInput(pilot) != 'Not a Number') {
       return window.alert('Please enter valid pilot name.')
   };
 
@@ -35,8 +35,9 @@ if (validateInput(fuelLevel) != 'Is a Number') {
 };
 if (validateInput(cargoLevel) != 'Is a Number') {
    return window.alert('Please enter valid cargo level.')
-};
+};*/
 
+let faultyItems = document.getElementById('faultyItems');
 
 let pilotStatus = document.getElementById('pilotStatus');
 pilotStatus = `Pilot ${pilot} is ready for launch`;
@@ -67,7 +68,7 @@ if (fuelLevel >= 10000 && cargoLevel <= 10000) {
 };
 
 
-}
+};
 
 async function myFetch() {
     let planetsReturned;
