@@ -43,7 +43,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 };
 
 
-let faultyItems = document.getElementById('faultyItems');
+list = document.getElementById('faultyItems');
 
 let pilotStatus = document.getElementById('pilotStatus');
 
@@ -54,7 +54,7 @@ let fuelStatus = document.getElementById('fuelStatus');
 let cargoStatus = document.getElementById('cargoStatus');
 
 if (fuelLevel < 10000 && cargoLevel > 10000) {
-faultyItems.style.visibility = "visible";
+list.style.visibility = "visible";
 pilotStatus.textContent = `Pilot ${pilot} is ready for launch`;
 copilotStatus.textContent = `Co-pilot ${copilot} is ready for launch`;
 fuelStatus.textContent = "Fuel level too low for launch";
@@ -63,7 +63,7 @@ launchStatus.textContent = "Shuttle Not Ready for Launch";
 launchStatus.style.color = "rgb(199, 37, 78)";
 } else
 if (fuelLevel < 10000) {
-    faultyItems.style.visibility = "visible";
+    list.style.visibility = "visible";
     pilotStatus.textContent = `Pilot ${pilot} is ready for launch`;
     copilotStatus.textContent = `Co-pilot ${copilot} is ready for launch`;
     fuelStatus.textContent = "Fuel level too low for launch";
@@ -72,7 +72,7 @@ if (fuelLevel < 10000) {
     launchStatus.style.color = "rgb(199, 37, 78)";
 } else 
 if (cargoLevel > 10000) {
-    faultyItems.style.visibilty = "visible";
+    list.style.visibilty = "visible";
     pilotStatus.textContent = `Pilot ${pilot} is ready for launch`;
     copilotStatus.textContent = `Co-pilot ${copilot} is ready for launch`;
     cargoStatus.textContent = "Cargo mass too heavy for launch";
@@ -81,7 +81,7 @@ if (cargoLevel > 10000) {
     launchStatus.style.color = "rgb(199, 37, 78)";
 } else 
 if (fuelLevel >= 10000 && cargoLevel <= 10000) {
-    faultyItems.style.visibilty = "visible";
+    list.style.visibilty = "visible";
     pilotStatus.textContent = `Pilot ${pilot} is ready for launch`;
     copilotStatus.textContent = `Co-pilot ${copilot} is ready for launch`;
     fuelStatus.textContent = "Fuel level high enough for launch";
