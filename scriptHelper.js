@@ -23,9 +23,13 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-    console.log('form submitted');
+  /*  console.log('form submitted');
+    console.log(pilot);
+    console.log(copilot);
+    console.log(fuelLevel);
+    console.log(cargoLevel);*/
 
-  /*if (validateInput(pilot) !== 'Not a Number') {
+  if (validateInput(pilot) !== 'Not a Number') {
       return window.alert('Please enter valid pilot name.')
   } else if 
 (validateInput(copilot) !== 'Not a Number') {
@@ -39,7 +43,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 };
 
 
-let faultyItems = document.getElementById('faultyItmes');
+let faultyItems = document.getElementById('faultyItems');
 
 let pilotStatus = document.getElementById('pilotStatus');
 
@@ -84,7 +88,7 @@ if (fuelLevel >= 10000 && cargoLevel <= 10000) {
     cargoStatus.textContent = "Cargo mass low enough for launch";
     launchStatus.textContent= "Shuttle is Ready for Launch";
     launchStatus.style.color = "rgb(65, 159, 106)";
-};*/
+};
 
 
 };

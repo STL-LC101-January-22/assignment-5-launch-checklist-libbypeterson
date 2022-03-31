@@ -8,17 +8,23 @@
 
 window.addEventListener("load", function() {
 
-    let submit = document.getElementById('formSubmit');
+    let submit = document.getElementById('launchForm');
     submit.addEventListener('submit', function (event) {
-        let pilotName = document.querySelector("input[name=pilotName]");
-        let copilotName = document.querySelector("input[name=copilotName]");
-        let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
-        let cargoMass = document.querySelector("input[name=cargoMass]");
+        let pilotName = document.querySelector("input[name='pilotName']");
+        let pilot = pilotName.value;
+        let copilotName = document.querySelector("input[name='copilotName']");
+        let copilot = copilotName.value;
+        let fuelLevelInput = document.querySelector("input[name='fuelLevel']");
+        let fuelLevel = fuelLevelInput.value;
+        let cargoMass = document.querySelector("input[name='cargoMass']");
+        let cargoMassInput = cargoMass.value;
 
     
-    formSubmission(document, faultyItems, pilotName, copilotName, fuelLevelInput, cargoMass);
+    formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoMassInput);
      event.preventDefault();
     });
+
+   //faultyItems.style.visibility = 'hidden';
 
    let listedPlanets;
    let chosenPlanet;
