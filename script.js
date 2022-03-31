@@ -21,13 +21,13 @@ window.addEventListener("load", function() {
         let cargoMassInput = cargoMass.value;
 
         let list = document.getElementById('faultyItems');
-
+        list.style.visibility = 'hidden';
     
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoMassInput);
      
     });
 
-   list.style.visibility = 'hidden';
+   //list.style.visibility = 'hidden';
 
    let listedPlanets;
    let chosenPlanet;
