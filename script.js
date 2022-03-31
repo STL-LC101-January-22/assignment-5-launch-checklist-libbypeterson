@@ -7,7 +7,7 @@
 //const { myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-
+    list.style.visibility = 'hidden';
     let submit = document.getElementById('launchForm');
     submit.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
         let cargoMassInput = cargoMass.value;
 
         let list = document.getElementById('faultyItems');
-        list.style.visibility = 'hidden';
+       
     
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoMassInput);
      
