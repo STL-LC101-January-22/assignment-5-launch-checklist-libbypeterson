@@ -27,7 +27,7 @@ window.addEventListener("load", function() {
      
     });
 
-   //faultyItems.style.visibility = 'hidden';
+   list.style.visibility = 'hidden';
 
    let listedPlanets;
    let chosenPlanet;
