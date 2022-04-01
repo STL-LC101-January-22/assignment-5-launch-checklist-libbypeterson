@@ -6,7 +6,24 @@
 
 //const { myFetch } = require("./scriptHelper");
 
-/*window.addEventListener("load", function() {
+window.addEventListener("load", function() {
+let list = document.getElementById('faultyItems');
+   list.style.visibility = 'hidden';
+
+   let listedPlanets;
+   let chosenPlanet;
+  
+   let listedPlanetsResponse = myFetch();
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       chosenPlanet = pickPlanet(listedPlanets);
+       addDestinationInfo(document, chosenPlanet.name, chosenPlanet.diameter, chosenPlanet.star, chosenPlanet.distance, chosenPlanet.moons, chosenPlanet.image);
+      
+   })
+  
     
     let submit = document.getElementById('launchForm');
     submit.addEventListener('submit', function (event) {
@@ -26,26 +43,10 @@
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoMassInput);
      
     });
-    let list = document.getElementById('faultyItems');
-   list.style.visibility = 'hidden';
-
-   let listedPlanets;
-   let chosenPlanet;
   
-   let listedPlanetsResponse = myFetch();
-   listedPlanetsResponse.then(function (result) {
-       listedPlanets = result;
-       console.log(listedPlanets);
-   }).then(function () {
-       console.log(listedPlanets);
-       chosenPlanet = pickPlanet(listedPlanets);
-       addDestinationInfo(document, chosenPlanet.name, chosenPlanet.diameter, chosenPlanet.star, chosenPlanet.distance, chosenPlanet.moons, chosenPlanet.image);
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-   })
-  
-});*/
+});
 
-window.addEventListener("load", function() {
+/*window.addEventListener("load", function() {
 
     let listedPlanets;
     let listedPlanetsResponse = myFetch();
@@ -78,7 +79,7 @@ window.addEventListener("load", function() {
  
         formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
     });
- });
+ });*/
 
 
 
