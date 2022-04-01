@@ -7,7 +7,7 @@
 //const { myFetch } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
-    list.style.visibility = 'hidden';
+    
     let submit = document.getElementById('launchForm');
     submit.addEventListener('submit', function (event) {
         event.preventDefault();
